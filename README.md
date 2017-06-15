@@ -5,7 +5,7 @@ Pure CSS3 OSX-like Dock Menu & Stacks
 ## Usage
 
 ```html
-<!-- include the required CSS -->
+<!-- somewhere in head -->
 <link rel="stylesheet" type="text/css" href="docklr-v1.0.css" />
 
 <!-- somewhere in body -->
@@ -66,14 +66,14 @@ See working example [here](https://faisalman.github.io/docklr-css).
 
 * General pattern: `ul > li > [a > img ]+[ul > li > a > img]`
 * The topmost `<ul>` element must have `"docklr"` class
-* Tooltip will be pulled from each of `<a>`'s `title` attribute.
-* For the first level list, it's recommended that `<a>`'s id match with its own hash (e.g `href="contact.html#terminal"` with `id="terminal"`) so the active sign (triangle below icon) can be shown.
-* `<a>`'s `href` attribute for stacks should begin with a hash (e.g href="#stack")
-* The image for icons must be a PNG/GIF/JPG with default size 64x64px (unless you want to modify the CSS).
+* Tooltip will be pulled from `<a>`'s `title` attribute.
+* It is recommended that `<a>`'s id match with its hash (e.g `href="contact.html#terminal"` with `id="terminal"`) so the active sign (triangle below icon) can be shown.
+* `<a>`'s `href` attribute for stacks should begin with a hash (e.g `href="#stack"`)
+* Image for icons must be a PNG/GIF/JPG with default size 64x64px (unless you want to modify the CSS).
 
 ## Credits
 
-* Some icons used here are from Oxygen which licensed under LGPL
+* Oxygen icon set
 
 ## License
 
