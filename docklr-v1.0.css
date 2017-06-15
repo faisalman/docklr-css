@@ -1,0 +1,433 @@
+/*
+ * Docklr.css v1.0
+ * Pure CSS3 OSX-like Dock Menu & Stacks
+ * https://github.com/faisalman/docklr-css
+ *
+ * Copyright © 2011 Faisal Salman <f@faisalman.com>
+ * Dual licensed under GPLv2 & MIT
+ */
+
+/* Internal CSS reset */
+
+.docklr,
+.docklr * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555;
+    vertical-align: baseline;
+}
+
+/* Wrapper */
+
+.docklr {
+    position: fixed;
+    bottom: 0;
+    
+    /* Center approximation */
+    left: 40%;
+    
+    z-index: 100;
+    list-style-type: none;
+    overflow: visible;
+	
+	/* "grey bar" for IE7 */
+	*padding: 5px;
+	*background: #474747;
+}
+
+/* The "grey bar" */
+
+.docklr:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: -20%;
+    display: block;
+    content: '';
+    width: 100%;
+    padding: 10px;
+    z-index: 99;
+    padding: 10px;
+    border-top: none;
+	border-right: 24px solid transparent;
+	border-left: 24px solid transparent;
+	border-bottom: 24px solid #474747; 
+	border-bottom: 24px solid rgba(70, 70, 70, 0.8); 
+	height: 0;
+}
+
+/* Icon */
+
+.docklr > li {
+    position: relative;
+    display: inline-block;
+    z-index: 101;
+    margin-left: -4px;
+    bottom: 4px;
+    height: 32px;
+    width: 40px;
+    
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;    
+    -ms-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+    
+    /* IE7 quick fix */
+	*bottom: 0;
+	*display: block;
+	*float: left;
+}
+
+.docklr > li:hover {
+    height: 64px;
+    width: 72px; 
+    
+    /* Icon hover animation */
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+	
+	/* IE7 quick fix */
+	*height: 32px;
+}
+
+/* Icon shadow */
+
+.docklr > li:before {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    display: block;
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: #444;    
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;    
+    -webkit-box-shadow: 0 0 5px #171717;
+    -moz-box-shadow: 0 0 5px #171717;
+    box-shadow: 0 0 5px #171717;
+}
+
+/* Icon shadow when expanded */
+
+.docklr > li:hover:before {
+    width: 60px;
+    left: 6px;
+}
+
+.docklr > li > a,
+.docklr > li > ul > li > a {
+    position: relative;
+    display: block;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+/* IE7 quick fix */
+.docklr > li > a {
+    *position: absolute;
+	*bottom: 0;
+}
+
+/* Balloon tooltip */
+
+.docklr > li:hover > a:before {
+    position: absolute;
+    top: -32px;
+    padding: 2px 8px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px #171717;
+    -moz-box-shadow: inset 0 0 5px #171717;
+    box-shadow: inset 0 0 5px #171717;
+    opacity: 0.8;
+    overflow: hidden;
+    content: attr(title);
+    text-align: center;
+    color: #f7f7f7;
+    background: #474747;
+    text-shadow: 1px 1px 1px #171717;
+    white-space: nowrap;
+}
+
+/* Triangle for balloon tooltip */
+
+.docklr > li:hover > a:after {
+    position: absolute;
+    left: 32px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 5px solid #333;
+    border-bottom: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    opacity: 0.8;
+}
+
+/* Bouncing animation */
+
+@-webkit-keyframes docklr-icon-bounce {
+   0% {
+      bottom: 0;
+   }
+   12% {
+      bottom: 40px;
+   }
+   24% {
+      bottom: 4px;
+   }
+   36% {
+      bottom: 20px;
+   }
+   48% {
+      bottom: 2px;
+   }
+   60% {
+      bottom: 10px;
+   }
+   72% {
+      bottom: 1px;
+   }
+   84% {
+      bottom: 5px;
+   }
+   100% {
+      bottom: 0;
+   }
+}
+
+@-moz-keyframes docklr-icon-bounce {
+   0% {
+      bottom: 0;
+   }
+   12% {
+      bottom: 40px;
+   }
+   24% {
+      bottom: 4px;
+   }
+   36% {
+      bottom: 20px;
+   }
+   48% {
+      bottom: 2px;
+   }
+   60% {
+      bottom: 10px;
+   }
+   72% {
+      bottom: 1px;
+   }
+   84% {
+      bottom: 5px;
+   }
+   100% {
+      bottom: 0;
+   }
+}
+
+@-ms-keyframes docklr-icon-bounce {
+   0% {
+      bottom: 0;
+   }
+   12% {
+      bottom: 40px;
+   }
+   24% {
+      bottom: 4px;
+   }
+   36% {
+      bottom: 20px;
+   }
+   48% {
+      bottom: 2px;
+   }
+   60% {
+      bottom: 10px;
+   }
+   72% {
+      bottom: 1px;
+   }
+   84% {
+      bottom: 5px;
+   }
+   100% {
+      bottom: 0;
+   }
+}
+
+@-o-keyframes docklr-icon-bounce {
+   0% {
+      bottom: 0;
+   }
+   12% {
+      bottom: 40px;
+   }
+   24% {
+      bottom: 4px;
+   }
+   36% {
+      bottom: 20px;
+   }
+   48% {
+      bottom: 2px;
+   }
+   60% {
+      bottom: 10px;
+   }
+   72% {
+      bottom: 1px;
+   }
+   84% {
+      bottom: 5px;
+   }
+   100% {
+      bottom: 0;
+   }
+}
+
+@keyframes docklr-icon-bounce {
+   0% {
+      bottom: 0;
+   }
+   12% {
+      bottom: 40px;
+   }
+   24% {
+      bottom: 4px;
+   }
+   36% {
+      bottom: 20px;
+   }
+   48% {
+      bottom: 2px;
+   }
+   60% {
+      bottom: 10px;
+   }
+   72% {
+      bottom: 1px;
+   }
+   84% {
+      bottom: 5px;
+   }
+   100% {
+      bottom: 0;
+   }
+}
+
+.docklr > li > a:target {
+    -webkit-animation: docklr-icon-bounce 2s ease-in-out;
+    -moz-animation: docklr-icon-bounce 2s ease-in-out;    
+    -ms-animation: docklr-icon-bounce 2s ease-in-out;
+    -o-animation: docklr-icon-bounce 2s ease-in-out;
+    animation: docklr-icon-bounce 2s ease-in-out;
+}
+
+/* Triangle active sign below clicked icon */
+
+.docklr > li > a:target:after {
+    position: relative;
+    left: 40%;
+    bottom: -1px;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: none;
+    border-bottom: 5px solid #111;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.docklr > li:hover > a:target:after {
+    display: none;
+}
+
+.docklr > li > a > img,
+.docklr > li > ul > li > a > img {
+    width: 100%;
+}
+
+.docklr > li > ul {
+    position: absolute;
+    bottom: -999px;
+    left: 0;
+    padding: 20px 80px 120px 0;
+    list-style-type: none;
+    
+    /* IE7 quick fix */
+    *padding-bottom: 0;
+}
+
+/* Animation for when stacked menu appear */
+
+.docklr > li > a:target+ul {
+    -webkit-transition: bottom 1s, opacity 0.5s linear 0.5s;
+    -moz-transition: bottom ease-in-out 0.7s, opacity 0.2s linear 0.6s;
+    -ms-transition: bottom ease-in-out 0.7s, opacity 0.2s linear 0.6s;
+    -o-transition: bottom ease-in-out 0.7s, opacity 0.2s linear 0.6s;
+    transition: bottom ease-in-out 0.7s, opacity 0.2s linear 0.6s;   
+    bottom: -400px;
+    opacity: 0;
+}
+
+/* Show stacked menu */
+
+.docklr > li:hover > a:target+ul {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* Show stacked menu in IE */
+
+.docklr > li:hover > ul {
+	/* IE8 */
+	bottom: 0\9;	
+    /* IE7 quick fix */
+    *bottom: 60px;
+}
+
+.docklr > li > ul > li {
+    width: 40px;
+    height: 40px;
+    
+    /* IE7 quick fix */
+	*margin: -12px 0;
+}
+
+/* Stacked menu icon tooltip */
+
+.docklr > li > ul > li > a:before {
+    position: absolute;
+    top: 5px;
+    left: 48px;
+    padding: 2px 8px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px #171717;
+    -moz-box-shadow: inset 0 0 5px #171717;
+    box-shadow: inset 0 0 5px #171717;
+    opacity: 0.8;
+    overflow: hidden;
+    content: attr(title);
+    text-align: center;
+    color: #f7f7f7;
+    background: #474747;
+    text-shadow: 1px 1px 1px #171717;
+    white-space: nowrap;
+}
