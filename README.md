@@ -2,6 +2,8 @@
 
 Pure CSS3 OSX-like Dock Menu & Stacks
 
+![docklr-img](https://raw.githubusercontent.com/faisalman/docklr-css/master/Docklr.png)
+
 ## Usage
 
 ```html
