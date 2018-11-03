@@ -7,6 +7,7 @@ Pure CSS3 OSX-like Dock Menu & Stacks
 * Author    : Faisal Salman <<f@faisalman.com>>
 * Demo      : https://faisalman.github.io/docklr-css
 * Source    : https://github.com/faisalman/docklr-css
+* NPM       : https://www.npmjs.com/package/docklr-css
 
 ## Usage
 
