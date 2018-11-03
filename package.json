@@ -1,0 +1,29 @@
+{
+  "title": "Docklr.css",
+  "name": "docklr-css",
+  "version": "1.0",
+  "author": "Faisal Salman <f@faisalman.com> (http://faisalman.com)",
+  "description": "Pure CSS3 OSX-like Dock Menu & Stacks",
+  "keywords": [
+    "animations",
+    "css",
+    "dock",
+    "menu",
+    "navigation",
+    "stacks"
+  ],
+  "homepage": "https://github.com/faisalman/docklr-css",
+  "contributors": [
+    "Faisal Salman <f@faisalman.com>"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faisalman/docklr-css.git"
+  },
+  "license": "(GPL-2.0 OR MIT)",
+  "bugs": "https://github.com/faisalman/docklr-css/issues",
+  "demo": "https://faisalman.github.io/docklr-css"
+}

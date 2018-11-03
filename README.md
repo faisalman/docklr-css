@@ -4,6 +4,10 @@ Pure CSS3 OSX-like Dock Menu & Stacks
 
 ![docklr-img](https://raw.githubusercontent.com/faisalman/docklr-css/master/Docklr.png)
 
+* Author    : Faisal Salman <<f@faisalman.com>>
+* Demo      : https://faisalman.github.io/docklr-css
+* Source    : https://github.com/faisalman/docklr-css
+
 ## Usage
 
 ```html
