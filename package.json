@@ -1,7 +1,7 @@
 {
   "title": "Docklr.css",
   "name": "docklr-css",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Faisal Salman <f@faisalman.com> (http://faisalman.com)",
   "description": "Pure CSS3 OSX-like Dock Menu & Stacks",
   "keywords": [
